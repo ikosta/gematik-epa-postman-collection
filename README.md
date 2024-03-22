@@ -44,7 +44,7 @@ From the ePA configuration (needed for `SaveDocument` and `UpdateDocument`):
 
 ## Good to know
 
-In the `Pre-request Scritp` of the collection all other needed variables for the requests are set.
+In the `Pre-request Script` of the collection all other needed variables for the requests are set.
 
 - `DOCUMENT_ID`: must be in in [RFC4122](http://www.ietf.org/rfc/rfc4122.txt) format e.g. `urn:uuid:73343e0f-df8d-4176-9f29-41d96333df7e`
     - [DocumentEntry.entryUUID](https://profiles.ihe.net/ITI/TF/Volume3/ch-4.2.html#4.2.3.2.7)
