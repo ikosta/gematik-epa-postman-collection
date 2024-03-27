@@ -9,7 +9,9 @@ This is a Postman-Collection for DiGAs to make requests to the TI-Connector and 
 - `GetPinStatus`: Gets the status of the pin of the card.
 - `ReadCardCertificate`:  Reads the certificate of the card. In the certificate extras is the `AUTHOR_IDENTIFIER` you need for the configuration.
 - `VerifyPin`: Triggers the pin verification of the card.
+- `GetAuthorizationList`: Gets all HomeCommunityIDs and KVNRs the card is authorized for. (Can only be called once a day)
 - `GetHomeCommunityID`: Gets the home community id of the patient.
+- `GetAuthorizationState`: Gets the authorization state of the card for the patient.
 - `SaveDocument`: Saves a document in the ePA.
 - `UpdateDocument`: Updates a document in the ePA.
 
