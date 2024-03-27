@@ -1516,6 +1516,86 @@
 					],
 					"cookie": [],
 					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n    <soap:Header>\n        <Action xmlns=\"http://www.w3.org/2005/08/addressing\">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5/GetAuthorizationStateResponse</Action>\n        <MessageID xmlns=\"http://www.w3.org/2005/08/addressing\">urn:uuid:778c37f9-6ae4-4bc3-8d24-72464af6f5d6</MessageID>\n        <To xmlns=\"http://www.w3.org/2005/08/addressing\">http://www.w3.org/2005/08/addressing/anonymous</To>\n        <RelatesTo xmlns=\"http://www.w3.org/2005/08/addressing\">urn:uuid:e01a3b90-6691-49eb-8a19-f38eedcfb939</RelatesTo>\n    </soap:Header>\n    <soap:Body>\n        <ns5:GetAuthorizationStateResponse xmlns:ns11=\"urn:hl7-org:v3\" xmlns:ns10=\"urn:oasis:names:tc:SAML:1.0:assertion\" xmlns:ns9=\"http://www.w3.org/2006/05/addressing/wsdl\" xmlns:ns8=\"urn:oasis:names:tc:dss:1.0:core:schema\" xmlns:ns7=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:ns6=\"http://ws.gematik.de/tel/error/v2.0\" xmlns:ns5=\"http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5\" xmlns:ns4=\"http://ws.gematik.de/fa/phr/v1.1\" xmlns:ns3=\"http://ws.gematik.de/conn/ConnectorContext/v2.0\" xmlns:ns2=\"http://ws.gematik.de/conn/ConnectorCommon/v5.0\">\n            <ns2:Status>\n                <ns2:Result>OK</ns2:Result>\n            </ns2:Status>\n            <ns5:AuthorizationStatusList>\n                <ns5:AuthorizedApplication>\n                    <ns5:ApplicationName>ePA</ns5:ApplicationName>\n                    <ns5:ValidTo>9999-12-31</ns5:ValidTo>\n                </ns5:AuthorizedApplication>\n            </ns5:AuthorizationStatusList>\n        </ns5:GetAuthorizationStateResponse>\n    </soap:Body>\n</soap:Envelope>"
+				},
+				{
+					"name": "GetAuthorizationState Not autohorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/soap+xml; action=\"http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5/GetAuthorizationState\";",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n    <soap:Header>\n        <Action xmlns=\"http://www.w3.org/2005/08/addressing\">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5/GetAuthorizationState</Action>\n        <MessageID xmlns=\"http://www.w3.org/2005/08/addressing\">urn:uuid:{{HEADER_MESSAGE_ID}}</MessageID>\n        <To xmlns=\"http://www.w3.org/2005/08/addressing\">{{CONNECTOR_URL}}/fm/phrmanagementservice/v2.5</To>\n        <ReplyTo xmlns=\"http://www.w3.org/2005/08/addressing\">\n            <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>\n        </ReplyTo>\n    </soap:Header>\n    <soap:Body>\n        <GetAuthorizationState xmlns=\"http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5\" xmlns:ns2=\"http://ws.gematik.de/conn/ConnectorCommon/v5.0\" xmlns:ns3=\"http://ws.gematik.de/conn/ConnectorContext/v2.0\" xmlns:ns4=\"http://ws.gematik.de/fa/phr/v1.1\">\n            <ns3:Context>\n                <ns2:MandantId>{{MANDANT_ID}}</ns2:MandantId>\n                <ns2:ClientSystemId>{{CLIENT_SYSTEM_ID}}</ns2:ClientSystemId>\n                <ns2:WorkplaceId>{{WORKPLACE_ID}}</ns2:WorkplaceId>\n            </ns3:Context>\n            <RecordIdentifier>\n                <ns4:InsurantId root=\"{{KVNR_PROFESSION}}\" extension=\"{{KVNR}}\"/>\n                <ns4:HomeCommunityId>{{HOME_COMMUNITY_ID}}</ns4:HomeCommunityId>\n            </RecordIdentifier>\n            <UserAgent>PS_123/V1.1.0/gematik</UserAgent>\n        </GetAuthorizationState>\n    </soap:Body>\n</soap:Envelope>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CONNECTOR_URL}}/fm/phrmanagementservice/v2.5",
+							"host": [
+								"{{CONNECTOR_URL}}"
+							],
+							"path": [
+								"fm",
+								"phrmanagementservice",
+								"v2.5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"header": [
+						{
+							"key": "date",
+							"value": "Wed, 27 Mar 2024 10:56:30 GMT"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=8035200; includeSubdomains"
+						},
+						{
+							"key": "via",
+							"value": "1.1 gatekeeper"
+						},
+						{
+							"key": "content-type",
+							"value": "application/soap+xml;charset=UTF-8"
+						},
+						{
+							"key": "content-length",
+							"value": "1311"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "referrer-policy",
+							"value": "strict-origin-when-cross-origin"
+						},
+						{
+							"key": "expect-ct",
+							"value": "enforce, max-age=31536000"
+						}
+					],
+					"cookie": [],
+					"body": "<?xml version='1.0' encoding='UTF-8'?>\n<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\n    <soap:Header>\n        <Action xmlns=\"http://www.w3.org/2005/08/addressing\">http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5/GetAuthorizationStateResponse</Action>\n        <MessageID xmlns=\"http://www.w3.org/2005/08/addressing\">urn:uuid:49fcfbb0-2907-4308-a937-4ba09ed30e44</MessageID>\n        <To xmlns=\"http://www.w3.org/2005/08/addressing\">http://www.w3.org/2005/08/addressing/anonymous</To>\n        <RelatesTo xmlns=\"http://www.w3.org/2005/08/addressing\">urn:uuid:bd03f88a-f05e-4019-a46c-72a63371b998</RelatesTo>\n    </soap:Header>\n    <soap:Body>\n        <ns5:GetAuthorizationStateResponse xmlns:ns11=\"urn:hl7-org:v3\" xmlns:ns10=\"urn:oasis:names:tc:SAML:1.0:assertion\" xmlns:ns9=\"http://www.w3.org/2006/05/addressing/wsdl\" xmlns:ns8=\"urn:oasis:names:tc:dss:1.0:core:schema\" xmlns:ns7=\"http://www.w3.org/2000/09/xmldsig#\" xmlns:ns6=\"http://ws.gematik.de/tel/error/v2.0\" xmlns:ns5=\"http://ws.gematik.de/conn/phrs/PHRManagementService/v2.5\" xmlns:ns4=\"http://ws.gematik.de/fa/phr/v1.1\" xmlns:ns3=\"http://ws.gematik.de/conn/ConnectorContext/v2.0\" xmlns:ns2=\"http://ws.gematik.de/conn/ConnectorCommon/v5.0\">\n            <ns2:Status>\n                <ns2:Result>OK</ns2:Result>\n            </ns2:Status>\n            <ns5:AuthorizationStatusList/>\n        </ns5:GetAuthorizationStateResponse>\n    </soap:Body>\n</soap:Envelope>"
 				}
 			]
 		},
